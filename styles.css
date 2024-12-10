@@ -105,7 +105,7 @@ ul li button:hover {
 }
 
 /* Ekran küçüldüğünde fileList'in tamamen kaybolmasını önlemek için */
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .content-wrapper {
     flex-direction: column;
   }
