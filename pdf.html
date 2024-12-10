@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Birleştirici</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="aciklama">Dosya eklemek için tıkla veya dosyayı buraya sürükle bırak.</div>
+
+    <!-- <h1>PDF Birleştirici</h1> -->
+    <div class="surukle-birak-alani">
+      <div id="dropZone" class="drop-zone">
+        <div class="drop-zone-content">
+          <p>PDF dosyalarını buraya bırakın</p>
+        </div>
+        <input type="file" id="fileInput" multiple accept=".pdf" style="display: none;">
+      </div>
+
+      <!-- <button id="deleteSelectedBtn">Seçilenleri Sil</button> -->
+    </div>
+    <div class="content-wrapper">
+      <ul id="fileList"></ul>
+      <div id="previewContainer">
+        <div class="preview-controls">
+          <div class="button-container">
+            <button id="prevPage" class="nav-button">Önceki Sayfa</button>
+            <span id="pageInfo">Sayfa 1 / 1</span>
+            <button id="nextPage" class="nav-button">Sonraki Sayfa</button>
+          </div>
+          <div class="button-container">
+            <button id="mergeBtn" class="action-button">Birleştir ve İndir</button>
+          </div>
+
+        </div>
+        <canvas id="pdfPreview"></canvas>
+
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="script.js"></script>
+</body>
+</html>

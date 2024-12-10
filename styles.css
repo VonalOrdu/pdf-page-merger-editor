@@ -1,0 +1,258 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin-top: -30px;
+  padding: 10px;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+#fileList {
+  flex: 1;
+  min-width: 200px;
+  /* Minimum genişlik */
+  /* max-width: 400px; */
+  /* İsteğe bağlı: maksimum genişlik */
+  overflow-y: auto;
+  /* Dikey kaydırma çubuğu ekler */
+}
+
+#previewContainer {
+  flex: 0 0 auto;
+  /* Genişliğini korur, daralma yapmaz */
+  width: 600px;
+  /* veya istediğiniz sabit genişlik */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  margin-bottom: 4px;
+  background-color: #f8f9fa;
+  border-left: 3px solid #007bff;
+  transition: all 0.2s ease;
+}
+
+ul li:hover {
+  background-color: #e9ecef;
+}
+
+ul li.selected {
+  background-color: #e2e6ea;
+  border-left-color: #0056b3;
+}
+
+.page-order {
+  min-width: 24px;
+  text-align: right;
+  font-weight: bold;
+  color: #495057;
+  margin-right: 12px;
+}
+
+.page-info {
+  flex-grow: 1;
+  font-size: 14px;
+  color: #495057;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ul li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #6c757d;
+  padding: 4px;
+  margin-left: 4px;
+  transition: color 0.2s ease;
+}
+
+ul li button:hover {
+  color: #495057;
+}
+
+/* Ekran küçüldüğünde fileList'in tamamen kaybolmasını önlemek için */
+@media (max-width: 800px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  #fileList,
+  #previewContainer {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+canvas {
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+button {
+  margin: 10px 5px;
+  padding: 5px 10px;
+}
+
+#previewContainer {
+  flex: 1;
+}
+
+canvas {
+  border: 1px solid #ccc;
+  max-width: 100%;
+}
+
+.preview-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -60px;
+}
+
+.preview-controls button {
+  padding: 5px 10px;
+}
+
+.page-order {
+  display: inline-block;
+  width: 20px;
+  margin-right: 10px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.drop-zone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 9999;
+}
+
+.drop-zone-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.drop-zone.active {
+  display: block;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0px;
+}
+
+
+
+
+.nav-button,
+.action-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button {
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+.nav-button:hover {
+  background-color: #e9ecef;
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.action-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+#pageInfo {
+  font-size: 16px;
+  color: #495057;
+}
+
+/* İkonlar için (opsiyonel) */
+.nav-button::before,
+.action-button::before {
+  margin-right: 8px;
+  font-family: "Font Awesome 5 Free";
+  /* veya kullandığınız ikon kütüphanesi */
+  font-weight: 900;
+}
+
+#prevPage::before {
+  content: "\f053";
+  /* sol ok ikonu */
+}
+
+#nextPage::before {
+  content: "\f054";
+  /* sag ok ikonu */
+}
+
+#mergeBtn::before {
+  content: "\f56f";
+  /* birlestirme ikonu */
+}
+
+.aciklama {
+  /* margin-top: -10px; */
+  display: absolute;
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: 45%;
+  padding: 10px;
+  margin-top: 10px;
+}
+.aciklama:hover {
+  color: #ffffff;
+  background-color: #818181;
+  /* padding: 10px; */
+  border-radius: 5px;
+
+}
