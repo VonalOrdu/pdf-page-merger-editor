@@ -68,7 +68,7 @@ async function addFileToList(pdfPage) {
   const li = document.createElement('li');
   li.innerHTML = `
     <span class="page-order">${pdfPage.pageNumber}</span>
-    <span class="page-info">${pdfPage.fileName} - Sayfa ${pdfPage.pageNumber}</span>
+    <span class="page-info">${pdfPage.fileName} - Page ${pdfPage.pageNumber}</span>
   `;
   li.setAttribute('data-file-name', pdfPage.fileName);
   li.setAttribute('data-page-index', pdfPage.pageIndex);
@@ -183,7 +183,7 @@ async function mergePDFs() {
   const blob = new Blob([pdfBytes], { type: 'application/pdf' });
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
-  link.download = 'merged.pdf';
+  link.download = 'merged' + Date.now() + '.pdf';
   link.click();
 }
 
@@ -265,9 +265,9 @@ async function renderPage(pageNumber) {
 
 function updatePageInfo() {
   if (currentPdf) {
-    pageInfo.textContent = `Sayfa ${currentPage} / ${currentPdf.numPages}`;
+    pageInfo.textContent = `${currentPage} / ${currentPdf.numPages}`;
   } else {
-    pageInfo.textContent = 'Sayfa 0 / 0';
+    pageInfo.textContent = '0 / 0';
   }
   prevPageBtn.disabled = currentPage <= 1;
   nextPageBtn.disabled = !currentPdf || currentPage >= currentPdf.numPages;
@@ -308,6 +308,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const fileInput = document.getElementById('fileInput');
   const addFileBtn = document.getElementById('addFileBtn');
 
+
+  const fileList = document.getElementById('fileList');
+  fileList.addEventListener('dragenter', (e) => e.stopPropagation());
+  fileList.addEventListener('dragover', (e) => e.stopPropagation());
+  fileList.addEventListener('dragleave', (e) => e.stopPropagation());
+  fileList.addEventListener('drop', (e) => e.stopPropagation());
+
+
   addFileBtn.addEventListener('click', () => {
     fileInput.click();
   });
@@ -331,6 +339,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   document.addEventListener('dragleave', (e) => {
+    console.log("dragleave");
+    console.log(e.target);
     e.preventDefault();
     if (e.target === document || e.target === document.body) {
       dropZone.classList.remove('active');

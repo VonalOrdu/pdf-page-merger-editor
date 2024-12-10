@@ -24,6 +24,7 @@ body {
   /* İsteğe bağlı: maksimum genişlik */
   overflow-y: auto;
   /* Dikey kaydırma çubuğu ekler */
+  margin-bottom: 50px;
 }
 
 #previewContainer {
@@ -90,10 +91,26 @@ ul li button:hover {
   color: #495057;
 }
 
+.desciption {
+  width: 45% ;
+  padding: 10px;
+  margin-top: 10px;
+}
+.desciption:hover {
+  color: #ffffff;
+  background-color: #818181;
+  /* padding: 10px; */
+  border-radius: 5px;
+
+}
+
 /* Ekran küçüldüğünde fileList'in tamamen kaybolmasını önlemek için */
 @media (max-width: 800px) {
   .content-wrapper {
     flex-direction: column;
+  }
+  .desciption {
+    width: 100%;
   }
 
   #fileList,
@@ -240,19 +257,3 @@ canvas {
   /* birlestirme ikonu */
 }
 
-.desciption {
-  /* margin-top: -10px; */
-  display: absolute;
-  /* justify-content: center; */
-  /* align-items: center; */
-  width: 45%;
-  padding: 10px;
-  margin-top: 10px;
-}
-.desciption:hover {
-  color: #ffffff;
-  background-color: #818181;
-  /* padding: 10px; */
-  border-radius: 5px;
-
-}
