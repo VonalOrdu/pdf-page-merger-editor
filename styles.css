@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin-top: -30px;
   padding: 10px;
 }
@@ -240,7 +240,7 @@ canvas {
   /* birlestirme ikonu */
 }
 
-.aciklama {
+.desciption {
   /* margin-top: -10px; */
   display: absolute;
   /* justify-content: center; */
@@ -249,7 +249,7 @@ canvas {
   padding: 10px;
   margin-top: 10px;
 }
-.aciklama:hover {
+.desciption:hover {
   color: #ffffff;
   background-color: #818181;
   /* padding: 10px; */

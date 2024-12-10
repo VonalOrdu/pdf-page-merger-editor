@@ -305,6 +305,20 @@ function highlightSelectedPage(pageNumber) {
 
 document.addEventListener('DOMContentLoaded', function () {
   const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('fileInput');
+  const addFileBtn = document.getElementById('addFileBtn');
+
+  addFileBtn.addEventListener('click', () => {
+    fileInput.click();
+  });
+
+
+  dropZone.addEventListener('click', (e) => {
+    // Eğer tıklanan yer tam olarak dropZone ise (içindeki elemanlara tıklanmadıysa)
+    if (e.target === dropZone) {
+      fileInput.click(); // fileInput'u programatik olarak tıkla
+    }
+  });
 
   // Tüm sayfa için sürükleme olayları
   document.addEventListener('dragenter', (e) => {
