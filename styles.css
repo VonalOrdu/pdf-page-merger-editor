@@ -80,10 +80,10 @@ ul li button {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 25px;
   color: #6c757d;
-  padding: 4px;
-  margin-left: 4px;
+  /* padding: 4px; */
+  /* margin-left: 4px; */
   transition: color 0.2s ease;
 }
 
@@ -125,10 +125,6 @@ canvas {
   width: 100%;
 }
 
-button {
-  margin: 10px 5px;
-  padding: 5px 10px;
-}
 
 #previewContainer {
   flex: 1;
@@ -141,9 +137,10 @@ canvas {
 
 .preview-controls {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin-top: -60px;
+  margin-bottom: 10px;
 }
 
 .preview-controls button {
@@ -257,3 +254,21 @@ canvas {
   /* birlestirme ikonu */
 }
 
+.delete:hover {
+  color: red;
+}
+
+.rotate-left:hover{
+  color: #007bff;
+}
+
+.rotate-right:hover{
+  color: #007bff;
+}
+
+
+li button{
+  cursor: pointer;
+  font-weight: bold;
+  font-size: x-large;
+}
